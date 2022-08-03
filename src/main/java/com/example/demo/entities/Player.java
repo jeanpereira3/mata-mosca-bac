@@ -1,6 +1,8 @@
 package com.example.demo.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,7 @@ public class Player {
 	private Long id;
 	private Long score;
 	private String name;
-	private LocalDate date;
+	private String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
 	
 	public Player() {
 		// TODO Auto-generated constructor stub
@@ -47,11 +49,11 @@ public class Player {
 		this.name = name;
 	}
 
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	
